@@ -1,0 +1,609 @@
+/* general page style */
+html,body{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+/* fonts */
+@font-face{
+  font-family: 'Holtwood One SC', serif;
+  src:'../fonts/HoltwoodOneSC-Regular.ttf';
+}
+/* CSS Variables */
+:root{
+    --primary-color:#3b2514;
+    --primary-color2:#ffbe44;
+    --button-color:#c02124;
+    --button-font-color:#ffffff;
+    --title-color:#3b2514;
+    --text-color:#3d2412;
+    --title-font:"Holtwood One SC",serif;
+}
+/* style of header */
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+   /* background-color: #f4f4f4;*/
+  }
+  
+/* header */
+.header {
+    background-color: #fff;
+    font-family: 'Bebas Neue', cursive;
+    width: 100%;
+    z-index: 3;
+}
+.header a{
+    color:var(--primary-color);
+}
+.header .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} 
+.col-left {
+    flex: 50%;
+}
+.col-right {
+    flex: 50%;
+    text-align: right;
+    color:var(--primary-color);
+    font-weight: bold;
+} 
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+.header ul.menu li a {
+  display: inline-block;
+  margin-left:15px;
+  padding-bottom:20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: all 0.7s ease 0s,
+}
+.header li a:hover,
+.header .menu-btn:hover {
+ /* border-bottom : 1px solid var(--primary-color);*/
+ color:white;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+.header .col-right{
+    display: block;
+    float: right;
+    padding: 10px 20px;
+}
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+header{
+  background-image: url('../assets/images/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* burger img */
+.burger-img{
+  width: 90%;
+}
+/* description */
+.description{
+  color: var(--title-color);
+}
+.description h3{
+  display: inline-block;
+  padding: 10px;
+  border: 1px dashed var(--title-color);
+}
+.description h1 , .description h2{
+  font-size: 4em;
+  text-shadow: 2px 2px 3px white;
+  text-transform: uppercase;
+  font-family: 'Holtwood One SC', serif;
+  font-weight: bolder;
+}
+/* offers section */
+.offers{
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding: 10px;
+  font-size: 0.6em;
+}
+.offers .grid-item{
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  border-radius: 10px;
+}
+.offers .item1 {
+  grid-row-start : 1;
+  grid-row-end:3;
+  background-image:url('../assets/images/bg13.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+.offers .item2{
+  background-image:url('../assets/images/bg12.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+.offers .item3{
+  background-image:url('../assets/images/bg11.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+.grid-item h3,.grid-item h4{
+  text-transform: uppercase;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: lighter;
+  color: white;
+}
+.grid-item h3{
+  margin-bottom:20px;
+}
+div.offersBtn .row{
+  text-align: center;
+}
+button.tastyBtn{
+  font-weight: 900;
+  margin: 20px auto 0;
+  padding: 15px;
+  background-color: var(--primary-color2);
+  color: var(--primary-color);
+  text-transform: uppercase;
+  border: none;
+  cursor:pointer;
+}
+/* order section */
+.orders{
+  margin: 0 auto 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 10px;
+  font-size: 0.6em;
+  margin-bottom: 20px;
+}
+.orders .order-item{
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  color: var(--text-color);
+}
+.orders .order1 h2{
+  text-transform: uppercase;
+  font-family: 'Holtwood One SC', serif;
+  font-weight: bold;
+}
+.orders .order1 p , p.burger-description{
+  font-family: 'Montaga', serif;
+  font-size: 15px;
+  padding: 0 25px;
+}
+.orders .order1{
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.orders .order2{
+  grid-column-start: 1;
+}
+.orders .order2,.order3,.order4{
+  grid-row-start: 2;
+}
+.orders .order-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.orders button.order-now{
+  background-color: var(--button-color);
+  border:none;
+  color: white;
+  margin-top: 25px;
+  padding: 10px 20px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+}
+/* events section */
+.events{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom:50px;
+  padding: 25px;
+  box-shadow: 0 3em 3em rgba(0,0,0,0.1),
+  0 0  0 2px rgb(255,255,255),
+  0.3em 0.3em 1em rgba(0,0,0,0.3);
+ /*  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12) */
+}
+.events .events-text{
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-family: 'Holtwood One SC', serif;
+  font-weight: bold;
+  padding:10px 25px 0;
+  align-items: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} 
+.events .events-text h2:first-child{
+  font-family: 'Bebas Neue', cursive;
+  font-weight: lighter;
+}
+.events .events-text p{
+  padding-top: 25px;
+  font-family: 'Montaga', serif;
+  font-size: 20px;
+  font-weight: lighter;
+  text-transform: none;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+p.silde-text{
+  display: none;
+}
+span.active, .dot:hover {
+  background-color: var(--primary-color2);
+}
+p.silde-text {
+  -webkit-animation-name: fadeTxt;
+  -webkit-animation-duration: 1s;
+  animation-name: fadeTxt;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes fadeTxt {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fadeTxt {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+.events .events-item{
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 50%;
+}
+.events .events-image img{
+  max-width: 100%;
+  height: auto;
+}
+/* Reservation */
+.reservBlock{
+  padding: 50px 20px;
+  background-image:url('../assets/images/reservBG.jpg');
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.reservation{
+  display:flex;
+  flex-direction: column;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: lighter;
+  text-align: center;
+}
+.reservation h4{
+  font-size: 35px;
+}
+.reservation h3{
+  font-family: 'Holtwood One SC', serif; 
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+.reservation .reservationForm .form-row{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.reservation .reservationForm .form-row .form-col{
+  margin: 0 10px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 50%;
+}
+.reservation .reservationForm .form-row .form-col:first-child{
+  text-align: right;
+}
+.reservation .reservationForm .form-row .form-col:nth-child(2){
+  text-align: left;
+}
+.form-col input{
+  padding:10px 20px;
+  margin: 0 0 20px;
+  width: 250px;
+  border: 1px solid rgb(153, 153, 153);
+}
+.form-col input[type="button"]{
+  background-color: var(--button-color);
+  outline: none;
+  border:1px solid var(--button-color);
+  color: white;
+  font-weight: bolder;
+}
+.form-col input[type="button"]:hover{
+  background-color: #fff;
+  border: 1px solid var(--button-color);
+  color: var(--button-color);
+  cursor: pointer;
+}
+/* footer */
+footer{
+  padding-bottom: 25px;
+}
+section.footer{
+  background: url(../assets/images/fooerClearBG.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.overlay{
+  background-color: #000000ab;
+  padding: 50px 20px 20px;
+  display: flex;
+  color: white;
+}
+section.footer .overlay div{
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 50%;
+  flex:1;
+}
+.footer .left h1{
+  display: flex;
+  align-items: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3.5em;
+  margin-bottom: 20px;
+}
+.footer .left p{
+  font-family: 'Montaga', serif;
+  font-size: 15px;
+  font-weight: lighter;
+  text-transform: none;
+}
+.footer .left .copy p{
+  text-transform: uppercase ;
+  margin-top: 70px;
+}
+.footer .left h1 i{
+  padding-right:20px;
+  font-size: 1.3em;
+}
+.footer .right{
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  align-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+.footer .right .footerDesc{
+  padding-top: 7em;
+  padding-left: 50%;
+  text-align: left;
+}
+.footer .right .footerDesc i{
+  display:inline-block;
+  padding-right: 15px;
+  font-size: 25px;
+}
+.footer .right .social-icons{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.footer .right .social-icons i{
+  margin-right: 7px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px 7px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+.footer .right .social-icons i[class="fab fa-twitter"]:hover{
+  transform: scale(1.1);
+  color:#1DA1F2;
+}
+.footer .right .social-icons i[class="fab fa-facebook"]:hover{
+  transform: scale(1.1);
+  color:#4267B2;
+}
+.footer .right .social-icons i[class="fab fa-instagram"]:hover{
+  transform: scale(1.1);
+  color:#cc0e0e; 
+}
+.footer .right .social-icons i[class="fab fa-whatsapp"]:hover{
+  transform: scale(1.1);
+  color:#25D366;
+}
+  @media (max-width: 425px) {
+  .header .row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  .col-right, .col-left {
+    text-align: center;
+    flex: 100%;
+  }
+  .events .events-text div{
+    margin-bottom: 10px;
+  }
+  .events , .reservation .reservationForm .form-row,section.footer .overlay{
+    flex-direction: column;
+  }
+  .footer .right .footerDesc{
+    padding:0;
+    padding-bottom: 20px;
+  }
+  .reservation .reservationForm .form-row .form-col:first-child,
+  .reservation .reservationForm .form-row .form-col:nth-child(2){
+    text-align: center;
+  }
+  .offers .item1 , .offers .item2 , .offers .item3{
+  grid-column-start : 1;
+  grid-column-end:3;
+  }
+  .orders{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .description h1, .description h2{
+    font-size: 3em;
+  }
+  .orders .order1 {
+    grid-column-start : 1;
+    grid-column-end:2;
+    }
+    .orders .order3{
+      grid-row-start: 3;
+    }
+    .orders .order4{
+      grid-row-start: 4;
+    }
+    .order1 h2{
+      font-size: 30px;
+    }
+    .order1 p{
+      font-size: 15px;
+    }
+}
+
+@media (min-width: 55em) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 5px 5px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
+  
